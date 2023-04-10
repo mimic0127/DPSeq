@@ -1,0 +1,3 @@
+Please add your training dataset and test dataset in this folder.
+
+For training dataset, tile-folders of patients with different classes are put into different folders for class-balance. 
