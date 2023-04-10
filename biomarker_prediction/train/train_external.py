@@ -38,8 +38,6 @@ from tqdm import tqdm
 from torch.optim.lr_scheduler import ReduceLROnPlateau
 from torch.nn import init
 from data_utils.patch_dataloader import MSIDataset
-#from timm.models.mobilevit import mobilevit_s
-from cmt_pytorch.cmt import cmt_s,cmt_b
 
 from sklearn.metrics import roc_auc_score
 from sklearn.metrics import accuracy_score
@@ -263,21 +261,9 @@ def train(model_name, train_path_list, val_path_list, test_path_list, model_save
         num_ftrs = model.head.in_features
         model.head = nn.Linear(num_ftrs, 2)
         model.to(device)
-    elif model_name == 'CMT':
-        model = cmt_s(pretrained = False)
-        model.load_state_dict(torch.load('/data/cm/NLP_based_model_code/pretrained_model/cmt_small.pth')['model'])
-        num_fea = model.head.in_features
-        model.head = nn.Linear(num_fea,2)
-        model = model.to(device)
-    elif model_name == "Sequencer2D":
-        model = sequencer2d_s()
-        num_ftrs = model.head.in_features
-        model.load_state_dict(torch.load('/data/cm/NLP_based_model_code/pretrained_model/sequencer2d_s.pth'))
-        model.head = nn.Linear(num_ftrs, 2)
-        model  = model.to(device)
-    elif model_name == 'Seuqencer2D_finetuned':
+    elif model_name == 'DPSeq':
         model = DPSeq()
-        model.load_state_dict(torch.load('/data/cm/NLP_based_model_code/pretrained_model/Seuqnecer_fintuned0.pth'))
+        model.load_state_dict(torch.load('/data/cm/NLP_based_model_code/pretrained_model/DPSeq_fintuned.pth'))
         model.head = nn.Linear(32,2)
         model  = model.to(device)
     else:
