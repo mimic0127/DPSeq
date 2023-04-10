@@ -16,7 +16,7 @@ import pandas as pd
 import random
 import torch
 import argparse
-from biomarker_predict.train.sequencer_main.models.two_dim_sequencer import sequencer2d_s
+from biomarker_prediction.train.sequencer_main.models.two_dim_sequencer import sequencer2d_s
 
 # %%
 TARGET = "MSI"
