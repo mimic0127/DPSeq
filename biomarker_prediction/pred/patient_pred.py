@@ -158,15 +158,8 @@ def binary_classification_metric(pred_y_all, true_y_all):
 parser = argparse.ArgumentParser(description="MSI Status Prediction")
 parser.add_argument('--batch_size', type=int, default=64, help='has to be 16')
 parser.add_argument('--TCGA_folder_path',type=str, default="/data/cm/NLP_based_model_code/data/TCGA_MSI_patch", help='TCGA tile path')
-#parser.add_argument('--TCGA_folder_path',type=str, default="/data/cm/NLP_based_model_code/data/TCGA_pic_mix_0315", help='TCGA tile path')
-#parser.add_argument('--TCGA_folder_path',type=str, default="/data/cm/MSI_new/CRC_patch/TCGA_pic_mix", help='TCGA tile path')
-parser.add_argument('--model_name', type=str, default='swint')
-#parser.add_argument('--model_save_path', type=str,default = '/data/cm/MSI_new/models/MCO_seq_test_model_91_0.pth')
-#parser.add_argument('--model_save_path', type=str,default = '/data/cm/MSI_new/models/MCO_seq_test_model_finetuned3_0.pth')
-#parser.add_argument('--model_save_path', type=str,default = '/data/cm/MSI_new/models/MCO_CMT_9055_model_fold_0.pth')
-#parser.add_argument('--model_save_path', type=str,default = '/data/cm/NLP_based_model_code/outputs/MSI_CMT_trained.pth')
-#parser.add_argument('--model_save_path', type=str,default = '/data/cm/MSI_new/models/MCO_vit_778_model_fold_0.pth')
-parser.add_argument('--model_save_path', type=str,default = '/data/cm/MSI_new/models/MCO_swinT_model_fold_0.pth')
+parser.add_argument('--model_name', type=str, default='DPSeq')
+#parser.add_argument('--model_save_path', type=str,default = '/data/cm/MSI_new/models/MCO_DPSeq_finetuned.pth')
 parser.add_argument('--output_dir', type=str, default='/data/cm/NLP_based_model_code/outputs')
 
 # %%
@@ -239,8 +232,6 @@ if __name__ == '__main__':
     test_acc_top50, test_auc_top50, test_kappascore_top50, test_cm_top50 = binary_classification_metric(np.array(pred_test_top50),np.array(true_test))
     #test_acc_36, test_auc_36, test_kappascore_36, test_cm_36 = binary_classification_metric(np.array(pred_test_36),np.array(true_test))
     test_auc_36 = 0
-    #np.save('/data/cm/MSI_new/pred/Mobilenetv2_pred_{}.npy'.format(fold),np.array(pred_test_avg))
-    #np.save('/data/cm/MSI_new/pred/Mobilenetv2_true.npy',np.array(true_test))
 
     print("k:",k)
     test_auc_list.append(test_auc)
