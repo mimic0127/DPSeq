@@ -53,7 +53,7 @@ python DPSeq_finetuning.py -tr train_path -te test_path -ps model_save_path
 
 Take MSI status prediction as an example. BRAF muation and CIMP status are similar as MSI (Only should change the ground truth file path in patch_dataloader.py). 
 
-Code of Sequencer folder is cited from [Sequecner](https://github.com/okojoalg/sequencer)
+Code of Sequencer folder is cited from [Sequencer](https://github.com/okojoalg/sequencer)
 
 ```bash
 python biomarker_prediction/train/train_external.py --TCGA_folder_path test_folder_path\
