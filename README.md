@@ -1,7 +1,6 @@
-# DPSeq
+# 【Ameican Journal of Pathology】 DPSeq: A Novel and Efficient Digital Pathology Model for Predicting Cancer Biomarkers using Sequencer Architecture
 
-This is an implementation of our paper ***DPSeq: A Novel and Efficient Digital Pathology Model for Predicting Cancer Biomarkers using Sequencer 
-Architecture***
+This is an implementation of our paper ***DPSeq: A Novel and Efficient Digital Pathology Model for Predicting Cancer Biomarkers using Sequencer Architecture***
 
 ## Pipeline of Our Methods
 
@@ -72,4 +71,20 @@ python biomarker_prediction/pred/patient_pred.py --TCGA_folder_path prediction_f
                                                   --model_name model_name\
                                                   --model_save_path model_save_path\
                                                   --output_dir output_folder
+```
+
+## Citation
+
+Please cite the paper whenever our DPSeq is used to produce published results or incorporated into other software:
+```bash
+@article{cen2023novel,
+  title={A Novel and Efficient Digital Pathology Classifier for Predicting Cancer Biomarkers Using Sequencer Architecture},
+  author={Cen, Min and Li, Xingyu and Guo, Bangwei and Jonnagaddala, Jitendra and Zhang, Hong and Xu, Xu Steven},
+  journal={The American Journal of Pathology},
+  volume={193},
+  number={12},
+  pages={2122--2132},
+  year={2023},
+  publisher={Elsevier}
+}
 ```
